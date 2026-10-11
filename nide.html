@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Jajan Borcelle 🍡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FDE2E4',
+                        secondary: '#F8C6CB',
+                        accent: '#9D2932',
+                        dark: '#4A2028',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-primary/30 font-sans text-dark">
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-sm shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-[clamp(1.2rem,3vw,1.5rem)] font-bold text-accent">🍡 Borcelle</h1>
+            <div class="hidden md:flex gap-8">
+                <a href="#beranda" class="font-medium hover:text-accent transition-colors">Beranda</a>
+                <a href="#menu" class="font-medium hover:text-accent transition-colors">Menu</a>
+                <a href="#kontak" class="font-medium hover:text-accent transition-colors">Kontak</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-dark text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="container mx-auto px-4 py-3 flex flex-col gap-3">
+                <a href="#beranda" class="font-medium py-2 hover:text-accent">Beranda</a>
+                <a href="#menu" class="font-medium py-2 hover:text-accent">Menu</a>
+                <a href="#kontak" class="font-medium py-2 hover:text-accent">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-accent leading-tight mb-4">Warung Jajan <br> Borcelle</h2>
+                    <p class="text-lg mb-6 text-dark/80">Selalu enak! Jajanan favoritmu dengan harga terjangkau dan pasti halal 🍡</p>
+                    <a href="#menu" class="inline-block bg-accent text-white px-8 py-3 rounded-full font-medium hover:bg-accent/90 transition-colors shadow-lg">Lihat Menu</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://picsum.photos/id/292/800/600" alt="Jajanan Borcelle" class="w-full h-auto rounded-2xl shadow-xl object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Makanan -->
+    <section id="menu" class="py-16 bg-white/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-[clamp(1.5rem,4vw,2.2rem)] font-bold text-accent">🍩 Menu Makanan</h3>
+                <p class="text-dark/70 mt-2">Pilih jajanan favoritmu!</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 1 -->
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <div class="flex items-center gap-4">
+                        <img src="https://picsum.photos/id/291/200/200" alt="Donat" class="w-20 h-20 rounded-lg object-cover">
+                        <div>
+                            <h4 class="font-semibold text-lg">Donat</h4>
+                            <p class="text-sm text-dark/60">Cokelat, Stroberi, Gula halus</p>
+                            <p class="text-accent font-bold mt-1">Rp 5.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <div class="flex items-center gap-4">
+                        <img src="https://picsum.photos/id/139/200/200" alt="Sosis" class="w-20 h-20 rounded-lg object-cover">
+                        <div>
+                            <h4 class="font-semibold text-lg">Sosis</h4>
+                            <p class="text-sm text-dark/60">Pedas, Mayo, Keju</p>
+                            <p class="text-accent font-bold mt-1">Rp 5.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <div class="flex items-center gap-4">
+                        <img src="https://picsum.photos/id/161/200/200" alt="Pukis" class="w-20 h-20 rounded-lg object-cover">
+                        <div>
+                            <h4 class="font-semibold text-lg">Pukis</h4>
+                            <p class="text-sm text-dark/60">Cokelat, Asli, Keju</p>
+                            <p class="text-accent font-bold mt-1">Rp 5.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <div class="flex items-center gap-4">
+                        <img src="https://picsum.photos/id/175/200/200" alt="Lemper" class="w-20 h-20 rounded-lg object-cover">
+                        <div>
+                            <h4 class="font-semibold text-lg">Lemper</h4>
+                            <p class="text-sm text-dark/60">Ayam, Daging, Tempe</p>
+                            <p class="text-accent font-bold mt-1">Rp 5.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <div class="flex items-center gap-4">
+                        <img src="https://picsum.photos/id/292/200/200" alt="Brownis" class="w-20 h-20 rounded-lg object-cover">
+                        <div>
+                            <h4 class="font-semibold text-lg">Brownis</h4>
+                            <p class="text-sm text-dark/60">Cokelat, Asli, Keju</p>
+                            <p class="text-accent font-bold mt-1">Rp 5.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <div class="flex items-center gap-4">
+                        <img src="https://picsum.photos/id/1080/200/200" alt="Roti" class="w-20 h-20 rounded-lg object-cover">
+                        <div>
+                            <h4 class="font-semibold text-lg">Roti</h4>
+                            <p class="text-sm text-dark/60">Cokelat, Stroberi, Nanas</p>
+                            <p class="text-accent font-bold mt-1">Rp 5.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Minuman -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-[clamp(1.5rem,4vw,2.2rem)] font-bold text-accent">🥤 Menu Minuman</h3>
+                <p class="text-dark/70 mt-2">Segarkan harimu!</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <h4 class="font-semibold text-lg">Air Mineral</h4>
+                    <p class="text-accent font-bold mt-1">Rp 2.000</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <h4 class="font-semibold text-lg">Es/Hangat Teh</h4>
+                    <p class="text-accent font-bold mt-1">Rp 7.000</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <h4 class="font-semibold text-lg">Es/Hangat Jeruk</h4>
+                    <p class="text-accent font-bold mt-1">Rp 7.000</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <h4 class="font-semibold text-lg">Es/Hangat Kopi</h4>
+                    <p class="text-accent font-bold mt-1">Rp 12.000</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <h4 class="font-semibold text-lg">Es/Hangat Susu</h4>
+                    <p class="text-accent font-bold mt-1">Rp 10.000</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-md card-hover">
+                    <h4 class="font-semibold text-lg">Es Soda</h4>
+                    <p class="text-accent font-bold mt-1">Rp 11.000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="py-16 bg-secondary/20">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-[clamp(1.5rem,4vw,2rem)] font-bold text-accent mb-6">📍 Hubungi Kami</h3>
+            <p class="mb-2"><i class="fa fa-map-marker mr-2 text-accent"></i> Jl. bakti osis no 2</p>
+            <p class="mb-2"><i class="fa fa-phone mr-2 text-accent"></i> +62 83836052661</p>
+            <p class="mb-6"><i class="fa fa-clock-o mr-2 text-accent"></i> Buka: Senin - Sabtu, 08.00 - 21.00</p>
+            <p class="text-accent font-semibold">✨ makan enak ✨</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-accent text-white py-6 text-center">
+        <p>&copy; 2025 Warung Jajan Borcelle — Semua Halal & Enak 🍡</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Toggle Mobile Menu
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tutup menu saat diklik link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
